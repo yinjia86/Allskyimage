@@ -4,3 +4,7 @@ The example primarily utilizes HEALPix to segment and transform the all-sky imag
 can identify stars, and then uses GWCS to calibrate the image with registered stars. In addition to 
 Astrometry.net and SExtractor, the Python packages used include numpy, astropy, healpy, scipy, gwcs, 
 asdf, zoneinfo, datetime, os, and matplotlib.
+
+
+The corresponding paper is:
+Yin J., Yao Y., Qian X., Liu L., Chen X., Zhai L., 2025, MNRAS, 537, 617. doi:10.1093/mnras/staf056
