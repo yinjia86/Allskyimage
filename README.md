@@ -15,3 +15,14 @@ and is capable of automatically solving all-sky images. The ZEA and ARC projecti
 while others have not been tested yet. The AllSky-340 image uses the ARC projection. Due to the low 
 image resolution and a smaller number of stars, some positions could not be solved because the star 
 image quality was insufficient.
+
+The program all_sky_calibration_v.ipynb can been modified as follows so that it can be applied to 
+cases where nside is not a power of 2, such as nside=3, nside=5, nside=6, etc.
+class HealpixData():
+    def __init__(self, nside):
+        img = np.arange(hp.nside2npix(nside))
+        lon, lat = hp.pix2ang(nside, img, lonlat=True)
+        self.lat = np.deg2rad(90. -lat)
+        self.lon = np.deg2rad(lon)     
+and
+self.func = lambda x,y,z: hp.vec2pix(1024,x,y,z)
