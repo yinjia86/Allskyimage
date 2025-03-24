@@ -18,11 +18,14 @@ image quality was insufficient.
 
 The program all_sky_calibration_v.ipynb can been modified as follows so that it can be applied to 
 cases where nside is not a power of 2, such as nside=3, nside=5, nside=6, etc.
+
 class HealpixData():
     def __init__(self, nside):
         img = np.arange(hp.nside2npix(nside))
         lon, lat = hp.pix2ang(nside, img, lonlat=True)
         self.lat = np.deg2rad(90. -lat)
         self.lon = np.deg2rad(lon)     
+
 and
+
 self.func = lambda x,y,z: hp.vec2pix(1024,x,y,z)
