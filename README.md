@@ -19,12 +19,12 @@ image quality was insufficient.
 The program all_sky_calibration_v_1.ipynb is an all-sky calibration that does not rely on geographic 
 coordinates and observation time, thanks to the celestial coordinate fitting function of GWCS. If your 
 geographic coordinates, observation time, and the actual projection of the image do not match, when you 
-use all_sky_calibration_v.ipynb, some areas of the all-sky image may not be solvable. all_sky_calibration_v_1.ipynb 
+use all_sky_calibration_v.ipynb, some areas of the all-sky image may not be solvable. The all_sky_calibration_v_1.ipynb 
 avoids this issue by directly solving based on the equatorial coordinates, which can achieve better solving results. 
 Subsequently, the calibration of the horizontal coordinates can be obtained based on the star catalog, 
 geographic coordinates, and observation time.
 
 The calibration time for all_sky_calibration_v_1.ipynb is relatively long. Once a calibration is completed, 
-the calibration results can be reused, and here we provide all_sky_conversion.ipynb. The all_sky_conversion.ipynb 
-compares the rotation angles of the central regions to obtain a rotation matrix, and then calculates the new image 
-calibration. However, the calibration accuracy is significantly reduced.
+the calibration results can be reused, and here we provide all_sky_conversion.ipynb as a reference. The 
+all_sky_conversion.ipynb compares the rotation angles of the central regions to obtain a rotation matrix, 
+and then calculates the new image calibration. However, the calibration accuracy is significantly reduced.
